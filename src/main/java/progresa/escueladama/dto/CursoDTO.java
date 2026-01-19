@@ -12,7 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CursoDTO {
-    private String title;
+    private String nombre;
     private Integer creditos;
     private List<AlumnoDTO> alumnos;
 }
