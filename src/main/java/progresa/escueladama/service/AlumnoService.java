@@ -14,22 +14,20 @@ import java.util.Optional;
 public class AlumnoService {
     @Autowired
     private AlumnoRepository alumnoRepository;
-//    mostrar todos, buscar por id y mostrar uno por Id
-    public List<Alumno> getAllAlumnos(){
+
+    public List<Alumno> getAlumnos(){
         return alumnoRepository.findAll();
     }
-    public boolean existsAlumnoById(Long id){
+    public void saveAlumno(Alumno alumno){
+        alumnoRepository.save(alumno);
+    }
+    public void deleteAlumnoById(Long id){
+        alumnoRepository.deleteById(id);
+    }
+    public boolean existeAlumnoById(Long id){
         return alumnoRepository.existsById(id);
     }
-    public Optional<Alumno> getAlumnoById(Long id){
+    public Optional<Alumno> findById(Long id) {
         return alumnoRepository.findById(id);
     }
-//    salvar y borrar
-    public void save(Alumno alumno){
-         alumnoRepository.save(alumno);
-    }
-    public void deleteById(Long id){
-         alumnoRepository.deleteById(id);
-    }
-
 }

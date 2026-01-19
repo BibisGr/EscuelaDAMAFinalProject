@@ -21,13 +21,14 @@ public class Curso {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "title", nullable = false)
-    private String title;
+    @Column(name = "nombre", nullable = false)
+    private String nombre;
+    @Column(name = "creditos", nullable = false)
+    private Number creditos;
 
-    @Column(name = "creditos")
-    private Integer creditos;
-
-    @ManyToMany(mappedBy = "curso")
+    @ManyToMany(mappedBy = "cursos")
     @JsonBackReference
-    private Set<Alumno> alumnos = new HashSet<>();
+    private Set<Alumno> Alumnos = new HashSet<>();
 }
+
+

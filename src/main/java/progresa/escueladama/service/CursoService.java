@@ -16,27 +16,30 @@ import java.util.Optional;
 public class CursoService {
     @Autowired
     private CursoRepository cursoRepository;
-    //    mostrar todos, buscar por id y mostrar uno por Id
-    public List<Curso> getAllCursos(){
+
+    public List<Curso> getCursos(){
         return cursoRepository.findAll();
     }
-    public boolean existsByIdCursoById(Long id){
-        return cursoRepository.existsById(id);
-    }
-    public Optional<Curso> getCursoById(Long id){
-        return cursoRepository.findById(id);
-    }
-    public boolean existsByIdCursoByTitle(String title){
-        return cursoRepository.existsByCursoByTitle(title);
-    }
-    public Optional<Curso> getCursoByTitle(String title){
-        return cursoRepository.findCursoByTitle(title);
-    }
-    //    salvar y borrar
-    public void save(Curso curso){
+    public void saveCurso(Curso curso){
         cursoRepository.save(curso);
     }
     public void deleteById(Long id){
         cursoRepository.deleteById(id);
+    }
+
+    public boolean existeCursoById(Long id){
+        return cursoRepository.existsById(id);
+    }
+    public boolean existeCursoByNombre(String nombre){
+        return cursoRepository.existsByNombre(nombre);
+    }
+    public Optional<Curso> findById(Long id) {
+        return cursoRepository.findById(id);
+    }
+    public Optional<Curso> findByNombre(String nombre) {
+        return cursoRepository.findByNombre(nombre);
+    }
+    public List<Curso> findAllById(List<Long> ids){
+        return cursoRepository.findAllById(ids);
     }
 }
