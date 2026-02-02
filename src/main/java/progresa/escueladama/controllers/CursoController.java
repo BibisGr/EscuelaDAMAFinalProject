@@ -13,7 +13,7 @@ import progresa.escueladama.service.CursoService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/cursos")
+@RequestMapping("/api/cursos")
 public class CursoController {
     @Autowired
     private CursoService cursoService;
@@ -59,7 +59,7 @@ public class CursoController {
             )
     {
         if(StringUtils.isBlank((cursoDTO.getNombre()))){
-            return new ResponseEntity(new Mensaje("El title del curso es obligatorio"),
+            return new ResponseEntity(new Mensaje("El nombre del curso es obligatorio"),
                     HttpStatus.BAD_REQUEST);
         }
         if(cursoService.existeCursoByNombre(cursoDTO.getNombre())){

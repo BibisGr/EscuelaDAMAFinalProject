@@ -6,7 +6,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import progresa.escueladama.dto.AlumnoDTO;
-import progresa.escueladama.dto.CursoDTO;
 import progresa.escueladama.dto.Mensaje;
 import progresa.escueladama.entity.Alumno;
 import progresa.escueladama.entity.Curso;
@@ -18,7 +17,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/alumnos")
+@RequestMapping("/api/alumnos")
 public class AlumnoController {
     @Autowired
     private AlumnoService alumnoService;
